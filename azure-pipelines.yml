@@ -6,12 +6,31 @@
 trigger:
 - none
 
+parameters:
+- name: acrName
+  displayName: 'ACR Name'
+  type: string
+  default: 'acrpreet'
+- name: repoName
+  displayName: 'Repository Name'
+  type: string
+  default: '*'
+
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
-- task: Bash@3   
-  displayName: 'Run a one-line script'
+- task: Bash@3
   inputs:
-    filePath: hello.sh
+    targetType: 'inline'
+    script: |
+      # Define the ACR and repository name
+      ACR_NAME=$(acrName)
+      REPO_NAME=$(repoName)
+
+      # Authenticate with the ACR
+      az acr login --name $ACR_NAME
+
+      # Delete the specified image
+      az acr repository delete --name $ACR_NAME --repository $REPO_NAME --image $IMAGE_TAG
 
