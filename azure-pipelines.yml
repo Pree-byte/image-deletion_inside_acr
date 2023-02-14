@@ -10,6 +10,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: CmdLine@2
+  inputs:
+    script: 'az login'
 - task: Bash@3
   inputs:
     filePath: 'hello.sh'
