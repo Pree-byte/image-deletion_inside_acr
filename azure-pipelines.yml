@@ -24,6 +24,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
+      az acr login --registry acrpreet --password tRbukqgPsf9w8eM/e5JcrPjcs2n0XUz/3mmfqUzM6K+ACRCI3Xz6
       # Define the ACR and repository name
       ACR_NAME=$(acrName)
       REPO_NAME=$(repoName)
