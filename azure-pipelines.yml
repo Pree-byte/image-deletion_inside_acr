@@ -6,6 +6,11 @@
 trigger:
 - none
 
+parameters:
+  - name: nameofregistry
+    values:
+    - acrpreet
+    - exxatdevqa 
 pool:
   vmImage: 'ubuntu-latest'
 
