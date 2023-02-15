@@ -20,5 +20,5 @@ steps:
     script: 'az login -u preet.buhecha@exxat.com -p Powr@12345'
 - task: Bash@3
   inputs:
-    filePath: 'hello.sh'
-    arguments: 'acrpreet 2023-02-15'
+    filePath: #'hello.sh'
+    arguments: #'acrpreet 2023-02-15'
