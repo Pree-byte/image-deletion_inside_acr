@@ -16,4 +16,4 @@ steps:
 - task: Bash@3
   inputs:
     filePath: 'hello.sh'
-    arguments: 'acrpreet 2023-02-15'
+    arguments: '$($1) $($2)'
