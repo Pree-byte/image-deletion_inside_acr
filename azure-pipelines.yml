@@ -25,7 +25,7 @@ steps:
 - task: CmdLine@2
   inputs:
    script: |
-    az acr login --name $REGISTRY --username $(aad-username) --password $(aad-password))
+    az acr login --name $REGISTRY --username $(aad-username) --password $(aad-password)
 - task: CmdLine@2
   inputs:
     script: az acr login --name ${{ parameters.Registry}} 
