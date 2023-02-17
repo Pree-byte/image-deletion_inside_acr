@@ -11,10 +11,7 @@ parameters:
 - name: Resource_group
   type: string
   default: 'default value!'
-- name: Registry
-  type: string
-  default: 'default value!'    
-
+   
 pool:
   vmImage: 'ubuntu-latest'
 
