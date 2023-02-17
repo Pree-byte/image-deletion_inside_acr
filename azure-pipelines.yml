@@ -8,15 +8,6 @@ trigger:
 
 parameters:
 
-- name: loginserver
-  type: string
-  default: 'default value!'
-- name: docker_username
-  type: string
-  default: 'default value!'
-- name: docker_password
-  type: string
-  default: 'default value!'  
 - name: Resource_group
   type: string
   default: 'default value!'
@@ -33,7 +24,7 @@ pool:
 steps:
 - task: CmdLine@2
   inputs:
-    script: docker login ${{ parameters.loginserver }} --username ${{ parameters.docker_username }} --password ${{ parameters.docker_password }}      
+    script: az acr login --name ${{ parameters.Registry}} 
 - task: Bash@3
   inputs:
     filePath: 'hello.sh'
