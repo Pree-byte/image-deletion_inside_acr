@@ -7,10 +7,10 @@ trigger:
 - none
 
 parameters:
-- name: Repository Selection
+- name: Repository_Selection
   type: string
   default: 'default value!'
-- name: TIMESTAMP
+- name: Timestamp
   type: string
   default: 'default value!'
 
@@ -24,4 +24,4 @@ steps:
 - task: Bash@3
   inputs:
     filePath: 'hello.sh'
-    arguments: '$($1) $($2)'
+    arguments: '${{ parameters.Repository_Selection}} ${{ parameters.Timestamp }}'
