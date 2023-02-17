@@ -8,15 +8,6 @@ trigger:
 
 parameters:
 
-- name: Repository_Selection
-  type: string
-  default: 'default value!'
-- name: Timestamp
-  type: string
-  default: 'default value!'
-- name: Resource_group
-  type: string
-  default: 'default value!'
 - name: loginserver
   type: string
   default: 'default value!'
@@ -26,9 +17,16 @@ parameters:
 - name: docker_password
   type: string
   default: 'default value!'  
+- name: Resource_group
+  type: string
+  default: 'default value!'
 - name: Registry
   type: string
-  default: 'default value!'      
+  default: 'default value!'    
+- name: Timestamp
+  type: string
+  default: 'default value!'
+
 pool:
   vmImage: 'ubuntu-latest'
 
