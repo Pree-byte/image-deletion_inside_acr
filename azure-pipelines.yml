@@ -33,10 +33,7 @@ pool:
 steps:
 - task: CmdLine@2
   inputs:
-    script: docker login ${{ parameters.loginserver }} --username ${{ parameters.docker_username }} --password ${{ parameters.docker_password }}   
-- task: CmdLine@2
-  inputs:
-    script: az acr login --name ${{ parameters.Registry}}    
+    script: docker login ${{ parameters.loginserver }} --username ${{ parameters.docker_username }} --password ${{ parameters.docker_password }}      
 - task: Bash@3
   inputs:
     filePath: 'hello.sh'
