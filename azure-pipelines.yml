@@ -17,9 +17,15 @@ parameters:
 - name: Resource_group
   type: string
   default: 'default value!'
-- name: AcrID
+- name: loginserver
   type: string
   default: 'default value!'
+- name: docker_username
+  type: string
+  default: 'default value!'
+- name: docker_password
+  type: string
+  default: 'default value!'  
 - name: Registry
   type: string
   default: 'default value!'      
@@ -29,10 +35,7 @@ pool:
 steps:
 - task: CmdLine@2
   inputs:
-    script: 'az identity create --resource-group ${{Resource_group}} --name ${{AcrID}}'    
-- task: CmdLine@2
-  inputs:
-    script: 'az login --identity'
+    script: docker login ${{loginserver}} --username ${{docker_username}} --password ${{docker_password}}   
 - task: CmdLine@2
   inputs:
     script: az acr login --name ${{Registry}}    
