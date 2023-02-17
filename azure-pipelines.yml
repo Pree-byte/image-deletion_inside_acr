@@ -14,9 +14,6 @@ parameters:
 - name: Registry
   type: string
   default: 'default value!'    
-- name: Timestamp
-  type: string
-  default: 'default value!'
 
 pool:
   vmImage: 'ubuntu-latest'
