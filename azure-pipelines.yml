@@ -11,8 +11,8 @@ parameters:
   type: string
   default: 'default value!'
 - name: TIMESTAMP
-  type: number
-  default: '(Must be in YYYY-MM-DDTHH:MM:SS)'
+  type: string
+  default: 'default value!'
 
 pool:
   vmImage: 'ubuntu-latest'
