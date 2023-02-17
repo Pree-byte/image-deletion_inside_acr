@@ -7,17 +7,26 @@ trigger:
 - none
 
 parameters:
+
 - name: Repository_Selection
   type: string
   default: 'default value!'
 - name: Timestamp
   type: string
   default: 'default value!'
-
+- name: Resource_group
+  type: string
+  default: 'default value!'
+- name: AcrID
+  type: string
+  default: 'default value!'    
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: CmdLine@2
+  inputs:
+    script: 'az identity create --resource-group ${{Resource_group}} --name ${{AcrID}}'
 - task: CmdLine@2
   inputs:
     script: 'az login -u preet.buhecha@exxat.com -p Powr@12345'
