@@ -19,7 +19,7 @@ steps:
 - task: CmdLine@2
   inputs:
    script: |
-    az acr login --name $($1) --username $(aad-username) --password $(aad-password)
+     az login --service-principal -u $(sp_app_id) -p $(sp_app_password) --tenant $(tenant_id)
 - task: CmdLine@2
   inputs:
     script: az acr login --name $($1) 
